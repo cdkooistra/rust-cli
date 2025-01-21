@@ -14,7 +14,8 @@ This repository plans to recreate some popular CLI tools, such as:
 
 ## Features
 
-None as of yet.
+- `echo`
+    cargo run --bin echo -- -h
 
 ## License
 
