@@ -2,9 +2,9 @@ use chrono::Utc;
 use clap::Parser;
 
 #[derive(Parser)]
-#[command(version = "1.0", about = "Formats the current date/time")]
+#[command(version = "1.0", about = "Print datetime using formats")]
 struct Args {
-    // date format string
+    #[arg(default_value = "%+")]
     format: String,
 }
 
@@ -12,5 +12,5 @@ fn main() {
     let args = Args::parse();
     let now = Utc::now();
 
-    println!("{}", now.format(&args.format));
+    println!("{}", now.format(&args.format).to_string());
 }
